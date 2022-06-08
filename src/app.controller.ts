@@ -50,7 +50,7 @@ export class AppController {
 
   @Post('post')
   async createDraft(
-    @Body() postData: { title: string; content?: string; authorEmail?: string }
+    @Body() postData: { title: string; content?: string; authorEmail: string }
   ): Promise<PostModel> {
     const { title, content, authorEmail } = postData
     return this.postService.createPost({
